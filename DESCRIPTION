@@ -4,7 +4,12 @@ Title: Supporting material for the manuscript Sparsely-Connected Autoencoder (SC
 Version: 1.0
 Date: 2020-08-20
 Author: Raffaele A Calogero
-Maintainer: Who to complain to <raffaele.calogero@unito.it>
+Maintainer: Raffaele A Calogero <raffaele.calogero@unito.it>
 Description: Supporting material for the manuscript Sparsely-Connected Autoencoder (SCA) for single cell RNAseq data mining
-License: Artistic License” version 2.0
+Depends: R (>= 3.6.0)
+VignetteBuilder: knitr
+Suggests: devtools, knitr, rmarkdown
+BiocStyle: :html_document
+License: Artistic License version 2.0
 Encoding: UTF-8
+RoxygenNote: 7.1.1
