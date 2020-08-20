@@ -40,7 +40,7 @@ library(rCASC)
 downloadContainers(group="docker", containers.file="sca")
 ```
 
-## web site
+## Web site
 
 The vignette of the SCAtutorial can be also at [**vignette**](https://kendomaniac.github.io/SCAtutorial/articles/SCAvignette.html)
 
