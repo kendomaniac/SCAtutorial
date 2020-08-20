@@ -17,11 +17,11 @@ An extensive description of how rCASC works is provided at [*rCASC* vignette](ht
 
 - Docker daemon installed on the machine, for more info see this document:
 
-    [https://docs.docker.com/engine/install/](https://docs.docker.com/engine/install/).
+    [*https://docs.docker.com/engine/install/*](https://docs.docker.com/engine/install/).
 
 - The functions in rCASC package require that user belongs to a group with the rights to execute docker. See the following document for more info: 
 
-    [https://docs.docker.com/engine/install/linux-postinstall/](https://docs.docker.com/engine/install/linux-postinstall/)
+    [*https://docs.docker.com/engine/install/linux-postinstall/*](https://docs.docker.com/engine/install/linux-postinstall/)
 
 
 To install the SCAtutorial in an R session write:
@@ -40,7 +40,9 @@ library(rCASC)
 downloadContainers(group="docker", containers.file="sca")
 ```
 
+## web site
 
+The vignette of the SCAtutorial can be also at [**vignette**](https://kendomaniac.github.io/SCAtutorial/articles/SCAvignette.html)
 
 
 
