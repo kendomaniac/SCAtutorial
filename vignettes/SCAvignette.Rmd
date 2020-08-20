@@ -1,0 +1,44 @@
+---
+title: "Sparsely-Connected Autoencoders (SCAs) for single cell RNAseq data mining supplementary data"
+author: "Alessandri, Cordero, Beccuti, Licheri, Arigoni, Olivero, Di Renzo, Sapino and Calogero"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Sparsely-Connected Autoencoders (SCAs) for single cell RNAseq data mining supplementary data}
+  %\VignetteEngine{knitr::rmarkdown}
+  \usepackage[utf8]{inputenc}
+---
+
+```{r global_options, include=FALSE}
+knitr::opts_chunk$set(fig.pos = 'ht')
+#options(warn=-1) # suppress warnings
+options(warn=0) # restore waeniongs
+```
+
+# **Section 1**
+
+A data set, **setA** [[*Alessandri et al. 2019*](https://academic.oup.com/gigascience/article/8/9/giz105/5565135)], based on FACS purified cell types [[*Zheng et al. 2017*](https://www.nature.com/articles/ncomms14049)] was used to investigate the SCA behaviour.
+
+## **setA: 100 cells randomly selected for each cell type** 
+
+- (B) B-cells (25K reads/cell), 
+    
+- (M) Monocytes (100K reads/cell), 
+    
+- (HSC) Stem cells (24.7K reads/cell), 
+    
+- (NK) Natural Killer cells (29K reads/cell), 
+    
+- (N) Naive T-cells (19K reads/cell)
+
+
+SetA was previously used to estimate the strength of CSS metric [[*Alessandri et al. 2019*](https://academic.oup.com/gigascience/article/8/9/giz105/5565135)]. We clustered setA using all the clustering tools actually implemented in rCASC: tSne+k-mean [[*Pezzotti et al. 2017*](Approximated and User Steerable tSNE for Progressive Visual Analytics)], SIMLR [[*Wang et al. 2017*](https://www.nature.com/articles/nmeth.4207)], griph [[*Serra et al. 2019*](https://www.nature.com/articles/s41586-019-1146-y)], Seurat [[*Butler et al. 2018*](https://www.nature.com/articles/nbt.4096)], scanpy [[*Wolf et al. 2018*](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-017-1382-0)] and SHARP [[*Wan et al. 2020*](https://genome.cshlp.org/content/early/2020/01/28/gr.254557.119)]. All tools but tSne+k-mean and scanpy provided very good and similar partition of the different cell types (see Figure below).
+
+```{r fig.11, fig.cap="SetA counts table analysis", echo=FALSE, eval=TRUE, out.width="100%", fig.align="center"}
+library(knitr)
+include_graphics('./img/5clusters.png')
+```
+
+
+
+
+
