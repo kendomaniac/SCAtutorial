@@ -11,7 +11,7 @@ vignette: >
 ```{r global_options, include=FALSE}
 knitr::opts_chunk$set(fig.pos = 'ht')
 #options(warn=-1) # suppress warnings
-options(warn=0) # restore waeniongs
+options(warn=0) # restore warnings
 ```
 
 # **Section 1**

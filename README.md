@@ -11,6 +11,8 @@ SCA analysis was added as extention of [*rCASC*](https://pubmed.ncbi.nlm.nih.gov
 
 ## Installation
 
+To simplify usage and to guarantee reproducibility the tools required for the SCA workflow are embedded in docker containers stored at docker.io/repbioinfo. For more info on the computational approaches used in SCAtutorial please see [*Kulkarni et al. BMC Bioinformatics 2018*](https://pubmed.ncbi.nlm.nih.gov/30367595/)
+
 An extensive description of how rCASC works is provided at [*rCASC* vignette](https://kendomaniac.github.io/rCASC/articles/rCASC_vignette.html). Installation of rCASC including the SCA modules requires:
 
 - A workstation/server running 64 bits Linux.
@@ -24,7 +26,7 @@ An extensive description of how rCASC works is provided at [*rCASC* vignette](ht
     [*https://docs.docker.com/engine/install/linux-postinstall/*](https://docs.docker.com/engine/install/linux-postinstall/)
 
 
-To install the SCAtutorial in an R session write:
+To install the SCAtutorial, write in an R session:
 
 ```
 install.packages("devtools")
@@ -32,17 +34,19 @@ library(devtools)
 install_github("kendomaniac/SCAtutorial", ref="master")
 
 ```
-Then, after package installation execute in R:
+Then, after package installation, execute in R:
 ```
 library(SCAtutorial)
+#check if docker daemon is  running and install rCASC package from github.
 installing.rcasc()
-library(rCASC)
-downloadContainers(group="docker", containers.file="sca")
 ```
+
+This step checks that dockert daemon is running and downloads the dockert containers required for the tutorial. It might require sometime, between minutes to hours, depending on the available internet bandwidth.
+
 
 ## Web site
 
-The vignette of the SCAtutorial can be also at [**vignette**](https://kendomaniac.github.io/SCAtutorial/articles/SCAvignette.html)
+The vignette of the SCAtutorial is available at [**vignette**](https://kendomaniac.github.io/SCAtutorial/articles/SCAvignette.html)
 
 
 

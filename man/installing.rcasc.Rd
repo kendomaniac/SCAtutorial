@@ -7,7 +7,7 @@
 installing.rcasc()
 }
 \description{
-This function check that dcker is installed and install locally rCASC library
+This function check that dcker is installed and download locally the required docker containers
 }
 \examples{
 \dontrun{
