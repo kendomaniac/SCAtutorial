@@ -8,37 +8,87 @@ vignette: >
   \usepackage[utf8]{inputenc}
 ---
 
+<style>
+p.caption {
+  font-size: 0.8em;
+}
+</style>
+
 ```{r global_options, include=FALSE}
 knitr::opts_chunk$set(fig.pos = 'ht')
 #options(warn=-1) # suppress warnings
 options(warn=0) # restore warnings
 ```
 
-# **Section 1**
+# **Section 1**: Brief introduction on Sparsely-Connected-Autoencoder (SCA) analysis
+
+The scRNAseq analysis tools, which are part of the rCASC package [[*Alessandri et al 2019*](https://pubmed.ncbi.nlm.nih.gov/31494672/)], are implemented in docker containers to simplify the installation procedure of the overall workflow and to guarantee functional and computational reproducibility [[*Kulkarni et al. 2018*](https://pubmed.ncbi.nlm.nih.gov/30367595/)]. Figure below shows the overall organization of rCASC.
+
+```{r fig.01, fig.cap="**Figure rCASC organization**. rCASC is available as R package in github repository. rCASC can be installed locally using *install_github* function of devtools R library. A local installation of the docker images required for the analysis can be done with *downloadContainers* function of rCASC package. A local installation of rCASC acts as workflow manage, which interacts with the local docker repository via a specific daemon, to execute scRNAseq data analyses", echo=FALSE, eval=TRUE, out.width="60%", fig.align="center"}
+library(knitr)
+include_graphics('./img/rCASC.png')
+```
+
+
+
+
+The SCA workflow is shown in the figure below, which describes the basic steps required to extract hidden functional features, i.e.  TFs, miRNAs, Kinases, from a scRNAseq experiment using Sparsely-Connected-Autoencoder. To execute a SCA analysis it is required a scRNAseq count matrix. Subpopulation organization is thern discovered using any of the clustering tools implemented in rCASC a), and the quality of the subpopulation organization is evaluated using **C**ell **S**tability **S**core metric b), for more info on CSS please see [[*Alessandri et al 2019 supplementary data*](https://academic.oup.com/gigascience/article/8/9/giz105/5565135#supplementary-data). The clusters'data matrix, which is the count matrix including subpopulation organization, is normalized c)]. Normalized data are used to train a Sparsely-Connected-Autoencoder d). The hidden layer matrix is saved over multiple runs of the Sparsely-Connected-Autoencoder (hidden layer matrix is made of 0/1 for each hidden node, where 1 indicates that the node was used and 0 that the node was not used). The ability of each hidden layer matrix to reconstruct, at least partially, the subpopulation organization is evaluated by clustering e) and the quality of the reconstruction is evaluated using two metrics: **Q**uality **C**ontrol of **C**lusters and **Q**uality **C**ontrol of **M**odels f), more information on these two metrics will be given later in this vignette. The hidden layer frequency matrix provides information of the usage of the hidden nodes (TFs, miRNAs, Kinases) over multiple runs of the Sparsely-Connected-Autoencoder. COMET tool [[*Delaney et al. 2019*](https://pubmed.ncbi.nlm.nih.gov/31657111/)] is then used to grab the most important molecular feaures, i.e.  TFs, miRNAs, Kinases, associated to each SCA reconstructed cluster.
+
+```{r fig.02, fig.cap="**Figure SCA workflow**.", echo=FALSE, eval=TRUE, out.width="100%", fig.align="center"}
+library(knitr)
+include_graphics('./img/sca_workflow.png')
+```
+
+
+# **Section 2**: Dataset used in this vignette to demonstrate the use of SCA analysis.
 
 A data set, **setA** [[*Alessandri et al. 2019*](https://academic.oup.com/gigascience/article/8/9/giz105/5565135)], based on FACS purified cell types [[*Zheng et al. 2017*](https://www.nature.com/articles/ncomms14049)] was used to investigate the SCA behaviour.
 
 ## **setA: 100 cells randomly selected for each cell type** 
 
-- (B) B-cells (25K reads/cell), 
+- B-cells (B, 25K reads/cell), 
     
-- (M) Monocytes (100K reads/cell), 
+- Monocytes (M, 100K reads/cell), 
     
-- (HSC) Stem cells (24.7K reads/cell), 
+- Stem cells (HSC, 24.7K reads/cell), 
     
-- (NK) Natural Killer cells (29K reads/cell), 
+- Natural Killer cells (NK, 29K reads/cell), 
     
-- (N) Naive T-cells (19K reads/cell)
+- Naive T-cells (N, 19K reads/cell)
 
 
 SetA was previously used to estimate the strength of CSS metric [[*Alessandri et al. 2019*](https://academic.oup.com/gigascience/article/8/9/giz105/5565135)]. We clustered setA using all the clustering tools actually implemented in rCASC: tSne+k-mean [[*Pezzotti et al. 2017*](Approximated and User Steerable tSNE for Progressive Visual Analytics)], SIMLR [[*Wang et al. 2017*](https://www.nature.com/articles/nmeth.4207)], griph [[*Serra et al. 2019*](https://www.nature.com/articles/s41586-019-1146-y)], Seurat [[*Butler et al. 2018*](https://www.nature.com/articles/nbt.4096)], scanpy [[*Wolf et al. 2018*](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-017-1382-0)] and SHARP [[*Wan et al. 2020*](https://genome.cshlp.org/content/early/2020/01/28/gr.254557.119)]. All tools but tSne+k-mean and scanpy provided very good and similar partition of the different cell types (see Figure below).
 
-```{r fig.11, fig.cap="SetA counts table analysis", echo=FALSE, eval=TRUE, out.width="100%", fig.align="center"}
+```{r fig.03, fig.cap="**Figure SetA counts table analysis results**", echo=FALSE, eval=TRUE, out.width="100%", fig.align="center"}
 library(knitr)
 include_graphics('./img/5clusters.png')
 ```
 
 
+# **Section 3**: Manually curated cancer-immune-signature 
 
+A SCA based on manually curated cancer immunosignature detectes some features specific for clusters 4 and 5 of the setA, see Figure berlow.
+
+```{r fig.04, fig.cap="**Figure SCA analysis using a manually curated cancer-immune-signature (IS)**. Input counts table for SCA is log10 transformed.", echo=FALSE, eval=TRUE, out.width="40%", fig.align="center"}
+library(knitr)
+include_graphics('./img/is.png')
+```
+
+
+# **Section 4**: variational SCA (vSCA)
+
+Looking at the results at the level of QCC and QCM vSCA do not provide any advantage with respect to a normal SCA, see Figure below.
+
+```{r fig.05, fig.cap="**Figure vSCA based on TFs targets**. A) QCC TFs based SCA, B) QCM TFs based SCA, C) QCC TFs based vSCA, D) QCM TFs based vSCA . Input counts table for SCA is log10 transformed.", echo=FALSE, eval=TRUE, out.width="100%", fig.align="center"}
+library(knitr)
+include_graphics('./img/vsca.png')
+```
+
+# **Section 5**: How tyo run a SCA analysis.
+
+
+## **Section 5.1**: autoencoder function
+
+The autoencoder function 
 
 
