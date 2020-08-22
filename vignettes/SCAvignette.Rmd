@@ -89,6 +89,20 @@ include_graphics('./img/vsca.png')
 
 ## **Section 5.1**: autoencoder function
 
-The autoencoder function 
+The autoencoder function trains the SCA with the date derived by 
+
+```{r, echo=T, eval=F}
+##add example
+library(rCASC)
+autoencoder(group=c("docker"), scratch=path, 
+            file=paste(path, /Users/raffaelecalogero/Dropbox/data/partially-connected-autoencoders/paper/npj_Systems_Biology_and_Applications/rebuttal/SCAtutorial/inst/examples/setA.csv", sep="/"), 
+            separator=",", nCluster=5, bias="TF", permutation=16, 
+            nEpochs=2000, patiencePercentage=5,
+            cl=paste(path,"~/newModification/Data/Results/setA/5/
+                     setA_clustering.output.csv",sep=""), seed=1111, 
+            projectName="setAKinasi", bN="NULL")
+
+```
+
 
 
