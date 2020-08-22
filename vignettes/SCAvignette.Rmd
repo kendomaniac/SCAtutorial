@@ -89,18 +89,28 @@ include_graphics('./img/vsca.png')
 
 ## **Section 5.1**: autoencoder function
 
+The input data for the autoencoder function were generated using the following script, about 5 minutes on a MacBook Pro (3.5 GHz Dual-Core Intel Core i7, 16 Gb RAM).
+
+```{r, echo=T, eval=F}
+library(rCASC)
+system(paste("cp", paste(path.package("rCASC"),"examples/setA.csv.zip", sep="/"), "/Users/raffaelecalogero/Desktop/setA/", sep=" "))
+unzip("/Users/raffaelecalogero/Desktop/setA/setA.csv.zip", exdir="/Users/raffaelecalogero/Desktop/setA")
+system("rm /Users/raffaelecalogero/Desktop/setA/setA.csv.zip")
+system("rm -fR /Users/raffaelecalogero/Desktop/setA/__MACOSX")
+
+
+griphBootstrap(group="docker",scratch.folder="/Users/raffaelecalogero/Desktop/scratch/", file="/Users/raffaelecalogero/Desktop/setA/setA.csv",  nPerm=16, permAtTime=8, percent=10, separator=",",logTen=0, seed=111)
+
+
+
+```
+
+
 The autoencoder function trains the SCA with the date derived by 
 
 ```{r, echo=T, eval=F}
-##add example
 library(rCASC)
-autoencoder(group=c("docker"), scratch=path, 
-            file=paste(path, /Users/raffaelecalogero/Dropbox/data/partially-connected-autoencoders/paper/npj_Systems_Biology_and_Applications/rebuttal/SCAtutorial/inst/examples/setA.csv", sep="/"), 
-            separator=",", nCluster=5, bias="TF", permutation=16, 
-            nEpochs=2000, patiencePercentage=5,
-            cl=paste(path,"~/newModification/Data/Results/setA/5/
-                     setA_clustering.output.csv",sep=""), seed=1111, 
-            projectName="setAKinasi", bN="NULL")
+autoencoder(group=c("docker"), scratch="/Users/raffaelecalogero/Dropbox/data/partially-connected-autoencoders/paper/npj_Systems_Biology_and_Applications/rebuttal/SCAtutorial/inst/examples/scratch", file="/Users/raffaelecalogero/Dropbox/data/partially-connected-autoencoders/paper/npj_Systems_Biology_and_Applications/rebuttal/SCAtutorial/inst/examples/setA/setA.csv", separator=",", nCluster=5, bias="TF", permutation=16, nEpochs=2000, patiencePercentage=5, cl="/Users/raffaelecalogero/Dropbox/data/partially-connected-autoencoders/paper/npj_Systems_Biology_and_Applications/rebuttal/SCAtutorial/inst/examples/setA/Results/setA/5/setA_clustering.output.csv", seed=1111, projectName="setATF", bN="NULL")
 
 ```
 
