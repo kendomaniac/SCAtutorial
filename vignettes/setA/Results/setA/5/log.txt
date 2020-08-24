@@ -1,0 +1,10 @@
+ MatrixName:  setA 
+ nPerm: 8 
+ permAtTime: 8 
+ Percent: 10 
+ Clusters: 5 
+ Format: csv 
+ Separator: , 
+ log10 0 
+ Clustering Method: griph 
+ Perplexity: 0

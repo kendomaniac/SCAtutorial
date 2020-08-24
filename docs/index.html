@@ -84,28 +84,34 @@
 <div id="installation" class="section level2">
 <h2 class="hasAnchor">
 <a href="#installation" class="anchor"></a>Installation</h2>
+<p>To simplify usage and to guarantee reproducibility the tools required for the SCA workflow are embedded in docker containers stored at docker.io/repbioinfo. For more info on the computational approaches used in SCAtutorial please see <a href="https://pubmed.ncbi.nlm.nih.gov/30367595/"><em>Kulkarni et al. BMC Bioinformatics 2018</em></a></p>
 <p>An extensive description of how rCASC works is provided at <a href="https://kendomaniac.github.io/rCASC/articles/rCASC_vignette.html"><em>rCASC</em> vignette</a>. Installation of rCASC including the SCA modules requires:</p>
 <ul>
 <li><p>A workstation/server running 64 bits Linux.</p></li>
 <li>
 <p>Docker daemon installed on the machine, for more info see this document:</p>
-<p><a href="https://docs.docker.com/engine/install/">https://docs.docker.com/engine/install/</a>.</p>
+<p><a href="https://docs.docker.com/engine/install/"><em>https://docs.docker.com/engine/install/</em></a>.</p>
 </li>
 <li>
 <p>The functions in rCASC package require that user belongs to a group with the rights to execute docker. See the following document for more info:</p>
-<p><a href="https://docs.docker.com/engine/install/linux-postinstall/">https://docs.docker.com/engine/install/linux-postinstall/</a></p>
+<p><a href="https://docs.docker.com/engine/install/linux-postinstall/"><em>https://docs.docker.com/engine/install/linux-postinstall/</em></a></p>
 </li>
 </ul>
-<p>To install the SCAtutorial in an R session write:</p>
+<p>To install the SCAtutorial, write in an R session:</p>
 <pre><code><a href="https://rdrr.io/r/utils/install.packages.html">install.packages("devtools")
 library(devtools)
 install_github("kendomaniac/SCAtutorial", ref="master")
 </a></code></pre>
-<p>Then, after package installation execute in R:</p>
+<p>Then, after package installation, execute in R:</p>
 <pre><code><a href="https://rdrr.io/pkg/SCAtutorial/man">library(SCAtutorial)
-installing.rcasc()
-library(rCASC)
-downloadContainers(group="docker", containers.file="sca")</a></code></pre>
+#check if docker daemon is  running and install rCASC package from github.
+installing.rcasc()</a></code></pre>
+<p>This step checks that dockert daemon is running and downloads the dockert containers required for the tutorial. It might require sometime, between minutes to hours, depending on the available internet bandwidth.</p>
+</div>
+<div id="web-site" class="section level2">
+<h2 class="hasAnchor">
+<a href="#web-site" class="anchor"></a>Web site</h2>
+<p>The vignette of the SCAtutorial is available at <a href="https://kendomaniac.github.io/SCAtutorial/articles/SCAvignette.html"><strong>vignette</strong></a></p>
 </div>
 </div>
 

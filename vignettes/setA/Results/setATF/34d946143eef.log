@@ -1,0 +1,299 @@
+Loading required package: methods
+Loading required package: sm
+Package 'sm', version 2.2-5.4: type help(sm) for summary information
+Preprocessing...
+Removed 55 uninformative (invariant/no-show) gene(s)...
+
+Filtering Genes...Retained the top 55% overdispersed gene(s) 
+done
+Calculating Pairwise and Diffused Similarities...done
+Estimating Graph Structure...done
+Calculating edge weights and knn-based pruning...Kmnn:60
+done
+Pruning based on global node similarity: 1 / 1	keeping 74.5% of edges
+Detecting Graph Communities...
+done
+
+
+Refining Cluster Structure...
+MISCL
+0
+
+
+7 substantial clusters found...
+
+Bootstrapping to refine clusters...
+Calculating Cell Distances to Cluster Centroids (Bulks)...
+P (Elapsed Time: 0.031)
+C (Elapsed Time: 0.052)
+S (Elapsed Time: 0.061)
+H (Elapsed Time: 0.05)
+bEM (Elapsed Time: 0.522)
+done
+Calculating edge weights and knn-based pruning...Kmnn:33
+done
+	keeping 70.1% of edges
+Detecting Graph Communities...
+done
+Computing LargeVis embedding...
+	saving LargeVis plot to Lvis_UdnLa.pdf
+Finished (Elapsed Time: 14.761)
+Preprocessing...
+Removed 57 uninformative (invariant/no-show) gene(s)...
+
+Filtering Genes...Retained the top 54.5% overdispersed gene(s) 
+done
+Calculating Pairwise and Diffused Similarities...done
+Estimating Graph Structure...done
+Calculating edge weights and knn-based pruning...Kmnn:60
+done
+Pruning based on global node similarity: 1 / 1	keeping 74.9% of edges
+Detecting Graph Communities...
+done
+
+
+Refining Cluster Structure...
+MISCL
+0
+
+
+13 substantial clusters found...
+
+Bootstrapping to refine clusters...
+Calculating Cell Distances to Cluster Centroids (Bulks)...
+P (Elapsed Time: 0.051)
+C (Elapsed Time: 0.088)
+S (Elapsed Time: 0.098)
+H (Elapsed Time: 0.066)
+bEM (Elapsed Time: 0.636)
+done
+Calculating edge weights and knn-based pruning...Kmnn:57
+done
+	keeping 66.2% of edges
+Detecting Graph Communities...
+done
+Computing LargeVis embedding...
+	saving LargeVis plot to Lvis_rnFYp.pdf
+Finished (Elapsed Time: 13.124)
+Preprocessing...
+Removed 75 uninformative (invariant/no-show) gene(s)...
+
+Filtering Genes...Retained the top 50% overdispersed gene(s) 
+done
+Calculating Pairwise and Diffused Similarities...done
+Estimating Graph Structure...done
+Calculating edge weights and knn-based pruning...Kmnn:59
+done
+Pruning based on global node similarity: 1 / 1	keeping 74.5% of edges
+Detecting Graph Communities...
+done
+
+
+Refining Cluster Structure...
+MISCL
+0
+
+
+7 substantial clusters found...
+
+Bootstrapping to refine clusters...
+Calculating Cell Distances to Cluster Centroids (Bulks)...
+P (Elapsed Time: 0.022)
+C (Elapsed Time: 0.021)
+S (Elapsed Time: 0.031)
+H (Elapsed Time: 0.026)
+bEM (Elapsed Time: 0.181)
+done
+Calculating edge weights and knn-based pruning...Kmnn:33
+done
+	keeping 69.9% of edges
+Detecting Graph Communities...
+done
+Computing LargeVis embedding...
+	saving LargeVis plot to Lvis_Q2geU.pdf
+Finished (Elapsed Time: 8.846)
+Preprocessing...
+Removed 65 uninformative (invariant/no-show) gene(s)...
+
+Filtering Genes...Retained the top 52.9% overdispersed gene(s) 
+done
+Calculating Pairwise and Diffused Similarities...done
+Estimating Graph Structure...done
+Calculating edge weights and knn-based pruning...Kmnn:60
+done
+Pruning based on global node similarity: 1 / 1	keeping 75.3% of edges
+Detecting Graph Communities...
+done
+
+
+Refining Cluster Structure...
+MISCL
+0
+
+
+8 substantial clusters found...
+
+Bootstrapping to refine clusters...
+Calculating Cell Distances to Cluster Centroids (Bulks)...
+P (Elapsed Time: 0.03)
+C (Elapsed Time: 0.03)
+S (Elapsed Time: 0.048)
+H (Elapsed Time: 0.027)
+bEM (Elapsed Time: 0.248)
+done
+Calculating edge weights and knn-based pruning...Kmnn:37
+done
+	keeping 69.2% of edges
+Detecting Graph Communities...
+done
+Computing LargeVis embedding...
+	saving LargeVis plot to Lvis_BDQAM.pdf
+Finished (Elapsed Time: 7.774)
+Preprocessing...
+Removed 65 uninformative (invariant/no-show) gene(s)...
+
+Filtering Genes...Retained the top 52.9% overdispersed gene(s) 
+done
+Calculating Pairwise and Diffused Similarities...done
+Estimating Graph Structure...done
+Calculating edge weights and knn-based pruning...Kmnn:60
+done
+Pruning based on global node similarity: 1 / 1	keeping 75.8% of edges
+Detecting Graph Communities...
+done
+
+
+Refining Cluster Structure...
+MISCL
+0
+
+
+12 substantial clusters found...
+
+Bootstrapping to refine clusters...
+Calculating Cell Distances to Cluster Centroids (Bulks)...
+P (Elapsed Time: 0.037)
+C (Elapsed Time: 0.049)
+S (Elapsed Time: 0.058)
+H (Elapsed Time: 0.047)
+bEM (Elapsed Time: 0.376)
+done
+Calculating edge weights and knn-based pruning...Kmnn:53
+done
+	keeping 66.6% of edges
+Detecting Graph Communities...
+done
+Computing LargeVis embedding...
+	saving LargeVis plot to Lvis_DhmsI.pdf
+Finished (Elapsed Time: 7.535)
+Preprocessing...
+Removed 63 uninformative (invariant/no-show) gene(s)...
+
+Filtering Genes...Retained the top 52.9% overdispersed gene(s) 
+done
+Calculating Pairwise and Diffused Similarities...done
+Estimating Graph Structure...done
+Calculating edge weights and knn-based pruning...Kmnn:60
+done
+Pruning based on global node similarity: 1 / 1	keeping 75.3% of edges
+Detecting Graph Communities...
+done
+
+
+Refining Cluster Structure...
+MISCL
+0
+
+
+9 substantial clusters found...
+
+Bootstrapping to refine clusters...
+Calculating Cell Distances to Cluster Centroids (Bulks)...
+P (Elapsed Time: 0.021)
+C (Elapsed Time: 0.03)
+S (Elapsed Time: 0.039)
+H (Elapsed Time: 0.028)
+bEM (Elapsed Time: 0.275)
+done
+Calculating edge weights and knn-based pruning...Kmnn:41
+done
+	keeping 68.5% of edges
+Detecting Graph Communities...
+done
+Computing LargeVis embedding...
+	saving LargeVis plot to Lvis_G8u7E.pdf
+Finished (Elapsed Time: 9.606)
+Preprocessing...
+Removed 60 uninformative (invariant/no-show) gene(s)...
+
+Filtering Genes...Retained the top 53.7% overdispersed gene(s) 
+done
+Calculating Pairwise and Diffused Similarities...done
+Estimating Graph Structure...done
+Calculating edge weights and knn-based pruning...Kmnn:60
+done
+Pruning based on global node similarity: 1 / 1	keeping 74.9% of edges
+Detecting Graph Communities...
+done
+
+
+Refining Cluster Structure...
+MISCL
+0
+
+
+11 substantial clusters found...
+
+Bootstrapping to refine clusters...
+Calculating Cell Distances to Cluster Centroids (Bulks)...
+P (Elapsed Time: 0.054)
+C (Elapsed Time: 0.062)
+S (Elapsed Time: 0.065)
+H (Elapsed Time: 0.038)
+bEM (Elapsed Time: 0.274)
+done
+Calculating edge weights and knn-based pruning...Kmnn:49
+done
+	keeping 67.2% of edges
+Detecting Graph Communities...
+done
+Computing LargeVis embedding...
+	saving LargeVis plot to Lvis_rnFYp.pdf
+Finished (Elapsed Time: 7.739)
+Preprocessing...
+Removed 62 uninformative (invariant/no-show) gene(s)...
+
+Filtering Genes...Retained the top 53.2% overdispersed gene(s) 
+done
+Calculating Pairwise and Diffused Similarities...done
+Estimating Graph Structure...done
+Calculating edge weights and knn-based pruning...Kmnn:60
+done
+Pruning based on global node similarity: 1 / 1	keeping 75.3% of edges
+Detecting Graph Communities...
+done
+
+
+Refining Cluster Structure...
+MISCL
+0
+
+
+9 substantial clusters found...
+
+Bootstrapping to refine clusters...
+Calculating Cell Distances to Cluster Centroids (Bulks)...
+P (Elapsed Time: 0.025)
+C (Elapsed Time: 0.069)
+S (Elapsed Time: 0.046)
+H (Elapsed Time: 0.026)
+bEM (Elapsed Time: 0.229)
+done
+Calculating edge weights and knn-based pruning...Kmnn:41
+done
+	keeping 68.5% of edges
+Detecting Graph Communities...
+done
+Computing LargeVis embedding...
+	saving LargeVis plot to Lvis_G8u7E.pdf
+Finished (Elapsed Time: 8.426)

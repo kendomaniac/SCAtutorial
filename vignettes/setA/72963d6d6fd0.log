@@ -1,0 +1,31 @@
+Loading required package: methods
+
+Attaching package: 'dplyr'
+
+The following objects are masked from 'package:stats':
+
+    filter, lag
+
+The following objects are masked from 'package:base':
+
+    intersect, setdiff, setequal, union
+
+Loading required package: sm
+Package 'sm', version 2.2-5.5: type help(sm) for summary information
+Warning message:
+no DISPLAY variable so Tk is not available 
+Loading required package: prodlim
+Loading required package: ggplot2
+Loading required package: cowplot
+
+Attaching package: 'cowplot'
+
+The following object is masked from 'package:ggplot2':
+
+    ggsave
+
+Loading required package: Matrix
+null device 
+          1 
+null device 
+          1 
