@@ -34,7 +34,8 @@ include_graphics('./img/rCASC.png')
 
 The SCA workflow is shown in the figure below, which describes the basic steps required to extract hidden functional features, i.e.  TFs, miRNAs, Kinases, from a scRNAseq experiment using Sparsely-Connected-Autoencoder. To execute a SCA analysis it is required a scRNAseq count matrix. Subpopulation organization is then discovered using any of the clustering tools implemented in rCASC a), and the quality of the subpopulation organization is evaluated using **C**ell **S**tability **S**core metric b), for more info on CSS please see [[*Alessandri et al 2019 supplementary data*](https://academic.oup.com/gigascience/article/8/9/giz105/5565135#supplementary-data). The clusters'data matrix, which is the count matrix including subpopulation organization, is normalized c). Normalized data are used to train a Sparsely-Connected-Autoencoder d). The hidden layer matrix is saved over multiple runs of the Sparsely-Connected-Autoencoder (hidden layer matrix is made of 0/1 for each hidden node, where 1 indicates that the node was used and 0 that the node was not used). The ability of each hidden layer matrix to reconstruct, at least partially, the expected subpopulation organization is evaluated by clustering e) and the quality of the reconstruction is evaluated using two metrics: **Q**uality **C**ontrol of **C**lusters and **Q**uality **C**ontrol of **M**odels f), more information on these two metrics will be given later in this vignette. The hidden layer frequency matrix provides information of the usage of the hidden nodes (TFs, miRNAs, Kinases) over multiple runs of the Sparsely-Connected-Autoencoder. COMET tool [[*Delaney et al. 2019*](https://pubmed.ncbi.nlm.nih.gov/31657111/)] is then used to grab the most important molecular features, i.e.  TFs, miRNAs, Kinases, associated to each SCA reconstructed cluster.
 
-```{r fig.02, fig.cap="**Figure SCA workflow**.", echo=FALSE, eval=TRUE, out.width="100%", fig.align="center"}
+
+```{r fig.02, fig.cap="**Figure SCA workflow**", , echo=FALSE, eval=TRUE, out.width="80%", fig.align="center"}
 library(knitr)
 include_graphics('./img/sca_workflow.png')
 ```
@@ -87,6 +88,8 @@ include_graphics('./img/vsca.png')
 # **Section 5**: How to run a SCA analysis.
 
 This section provides an example of a SCA analysis, number of permutations is kept very small to reduce computing time. 
+
+The overall run described in this vignette is available in the folder **vignettes/setA**
 
 **IMPORTANT**: Please note that the results generated in this section are meaningless. They are only used to demonstrate the how SCA functions work. In a real experiment at least 120 permutations **MUST** be execute in each chunk of code, where permutations are indicated.
 
@@ -146,25 +149,25 @@ include_graphics('./img/learning.png')
 
 ### **Section 5.1.1**: autoencoder parameters (for the full list of parameters please refer to the function help):
 
-    + *group*,	usually set to **docker**, indicating the group of users allowed to execute docker instances.
+- group,	usually set to docker, indicating the group of users allowed to execute docker instances.
     
-    + *scratch.folder*,	a character string indicating the path of the scratch folder. Usually scratch folder is located on a SSD disk to guarantee optimal IO.
+- scratch.folder,	a character string indicating the path of the scratch folder. Usually scratch folder is located on a SSD disk to guarantee optimal IO.
     
-    + *file*,	a character string indicating the path of the count matrix, it includes count matrix name with extension.
+- file,	a character string indicating the path of the count matrix, it includes count matrix name with extension.
 
-    + *bias*, 6 options are available: "mirna" , "TF", "CUSTOM", "kinasi","immunoSignature", "ALL". This parameter refers to the rules used to generate the partially connected hidden layer. If ALL is used, mirna, TF, kinasi, immunoSignature are combined to generate a SSCA (Sparse-Sparsely-Connected-Autoencoder). If CUSTOM is selected the path to the file required to build the autoencoder structure should be assigned to the parameter bN. The hidden layer description file must have the following structure source (header is mandatory and row names must not be present, any extra column will be not taken in account):
+- bias, 6 options are available: "mirna" , "TF", "CUSTOM", "kinasi","immunoSignature", "ALL". This parameter refers to the rules used to generate the partially connected hidden layer. If ALL is used, mirna, TF, kinasi, immunoSignature are combined to generate a SSCA (Sparse-Sparsely-Connected-Autoencoder). If CUSTOM is selected the path to the file required to build the autoencoder structure should be assigned to the parameter bN. The hidden layer description file must have the following structure source (header is mandatory and row names must not be present, any extra column will be not taken in account):
 
-        + name of the hidden layer node, column 1 
-            
-        + geneTarget, i.e. genes present in the hidden node, column 2. 
+    + name of the hidden layer node, column 1 
+    
+    + geneTarget, i.e. genes present in the hidden node, column 2. 
 
-    + *nEpochs*, this is the parameter referring to the number of times the training vectors are used to update the hidden layers weights. At the end of this learning step the best weights for nodes are defined. Please note that the best weights are not necessarily in the last epoch. Frequently, they are located in the first 1000 epochs. Thus, a good approach is to run 2000 epochs with 1 permutation only and check the learning rate, see figure below. The optimal epochs is selected within the flat part of the learning curve. Then, the analysis is run again with the number of permutations of your choice. 
+- nEpochs, this is the parameter referring to the number of times the training vectors are used to update the hidden layers weights. At the end of this learning step the best weights for nodes are defined. Please note that the best weights are not necessarily in the last epoch. Frequently, they are located in the first 1000 epochs. Thus, a good approach is to run 2000 epochs with 1 permutation only and check the learning rate, see figure below. The optimal epochs is selected within the flat part of the learning curve. Then, the analysis is run again with the number of permutations of your choice. 
 
-    + *permutation*, this parameter refers to the  number of times the neural network is calculated from scratch. The number of permutations depends on the level of consistency requested, usually 160 permutations provides robust results, but it might take some times to execute on a common laptop. 
+- permutation, this parameter refers to the  number of times the neural network is calculated from scratch. The number of permutations depends on the level of consistency requested, usually 160 permutations provides robust results, but it might take some times to execute on a common laptop. 
 
-    + *cl*, this parameter refers to the full path to the **\_clustering.output** file to be used, which was generated using rCASC clustering, see the output of the above chunk of code.
+- cl, this parameter refers to the full path to the \_clustering.output file to be used, which was generated using rCASC clustering, see the output of the above chunk of code.
 
-    + *ProjectName* parameter refers to the name of the folder where **autoencoder** outputs will be saved. 
+- ProjectName parameter refers to the name of the folder where autoencoder outputs will be saved. 
 
 
 ```{r, echo=T, eval=T}
@@ -208,13 +211,13 @@ cat("\n Computing time: ",end_time - start_time, "\n")
 ```
 ### **Section 5.2.1**: autoencoderClustering parameters (for the full list of parameters please refer to the function help):
 
-    + **IMPORTANT**: *file* parameter refers to the full path of the count table copied in the results output folder of the **autoencoder** function. See as example the above chunk of code
+- file, (IMPORTANT NOTE) this parameter refers to the full path of the count table copied in the results output folder of the autoencoder function. See as example the above chunk of code
 
-    + *projectName* parameter is the same indicated in **autoencoder** function. 
+- projectName, this parameter is the same indicated in autoencoder function. 
 
-    + *clusterMethod* parameter refers to any of the clustering methods available in rCASC ("GRIPH","SIMLR","SEURAT","SHARP"), not necessary should be the same used for the raw count table clustering, actually it is useful to test more than one clustering method to see which one provides the best convergence with the clusters initially generated using the genes counts table. 
+- clusterMethod, this parameter refers to any of the clustering methods available in rCASC ("GRIPH","SIMLR","SEURAT","SHARP"), not necessary should be the same used for the raw count table clustering, actually it is useful to test more than one clustering method to see which one provides the best convergence with the clusters initially generated using the genes counts table. 
 
-    + *pcaDimensions* parameter is only required when Seurat is used as clustering tool.
+- pcaDimensions, this parameter is only required when Seurat is used as clustering tool.
     
 The **autoencoderClustering** output is a folder where the name is given by the combination of the *projectName* and the  *clusterMethod*, e.g in the above example **/Results/setATF_GRIPH**. In the example above, in the folder **/SCAtutorial/vignettes/setA/Results/setATF_GRIPH/5/**, there is the file **label.csv**, where is located the cluster assignment for each cells over each permutation.
 
@@ -249,19 +252,19 @@ include_graphics('./img/qcm-qcf.png')
 
 ### **Section 5.3.1**: autoencoderAnalysis parameters (for the full list of parameters please refer to the function help):
 
-        + **IMPORTANT**: *file* parameter refers to the full path of the count table copied in the results output folder of the **autoencoder** function. See as example the above chunk of code (same as for autoencoderClustering function)
+- file, (IMPORTANT NOTE)  this parameter refers to the full path of the count table copied in the results output folder of the autoencoder function. See as example the above chunk of code (same as for autoencoderClustering function)
 
-    + *projectName* parameter is the same indicated in **autoencoder** function. 
+- projectName, this parameter is the same indicated in autoencoder function. 
     
-    + *sp* is the similarity threshold defined for CSS. This paramenter has as default 0.8. Reduction below 0.7 of this threshold reduces the specificity of CSS; values equal or smaller than 0.5 are meaningless.
+- sp, this parameter indicates the similarity threshold defined for CSS, default 0.8. Reduction below 0.7 of this threshold reduces the specificity of CSS; values equal or smaller than 0.5 are meaningless.
     
 The outputs of **autoencoderAnalysis** are the pdfs:
 
-- **_stabilityPlot.pdf** (QCC, Figure panel B)
+- \_stabilityPlot.pdf (QCC, Figure above panel B)
 
-- **_stabilityPlotUNBIAS.pdf** (QCM, Figure panel C)
+- \_stabilityPlotUNBIAS.pdf (QCM, Figure above panel C)
 
-- **_StabilitySignificativityJittered.pdf** (QCM versus QCC, Figure panel D)
+- \_StabilitySignificativityJittered.pdf (QCM versus QCC, Figure above panel D)
 
 The above files are saved in **setA/Results/setATF/5/**
 
@@ -287,9 +290,9 @@ cat("\n Computing time: ",end_time - start_time, "\n")
 
 ### **Section 5.4.1**: autoFeature parameters (for the full list of parameters please refer to the function help):
 
-        + **IMPORTANT**: *file* parameter refers to the full path of the count table copied in the results output folder of the **autoencoder** function. See as example the above chunk of code (same as for autoencoderClustering function)
+- file, (IMORTANT NOTE) This parameter refers to the full path of the count table copied in the results output folder of the autoencoder function. See as example the above chunk of code (same as for autoencoderClustering function)
 
-    + file e projectName parameters refer to the outputs of **autoencoderAnalysis** 
+- projectName, this parameter refers to the outputs of autoencoderAnalysis 
 
 
 ## **Section 5.5**: comet2 function
@@ -320,19 +323,19 @@ cat("\n Computing time: ",end_time - start_time, "\n")
 
 ### **Section 5.5.1**: autoFeature parameters (for the full list of parameters please refer to the function help):
 
-    + *file* is the path to the frequency matrix generated by **autoFeature** function. 
+- file, it is the path to the frequency matrix generated by autoFeature function. 
     
-    + *clustering.output* is the path to the clustering.output generated by rCASC on the initial counts table 
+- clustering.output, it is the path to the clustering.output generated by rCASC on the initial counts table 
     
-    + *counts*,	if set to True it will calculate log10(expression+1). To be used if unlogged data are provided
+- counts,	if set to True it will calculate log10(expression+1). To be used if unlogged data are provided
     
-    + *nCluster*,	number of interested cluster used for analysis
+- nCluster,	the number clusters used for analysis
     
-    + *skipvis*,	set to True to skip visualizations
+- skipvis,	if set to True picture generation is skipped 
     
-    + *X*,	values from 0 to 1 argument for XL-mHG default 0.15, for more info see cometsc help.
+- X,	This value ranges between 0 amd 1. It is the argument for XL-mHG, default 0.15, for more info see cometsc help.
     
-    + *K*,	the number of gene combinations to be considered., possible values 2, 3, 4, default 2. WARNING increasing the number of combinations makes the matrices very big
+- K,	the number of gene combinations to be considered., possible values 2, 3, 4, default 2. WARNING increasing the number of combinations makes the matrices very big
     
 ## **Section 5.6**: wrapperAutoencoder function
 
@@ -351,65 +354,65 @@ wrapperAutoencoder(group="docker", scratch.folder=paste(home, "scratch", sep="/"
                    projectName="setATF",clusterMethod="GRIPH")
 ```
 
-- *wrapperAutoencoder parameters*:
+### **Section 5.6.1**: wrapperAutoencoder parameters:
 
-    + *group*,	a character string. Two options: sudo or docker, depending to which group the user belongs
+- group,	a character string. Two options: sudo or docker, depending to which group the user belongs
 
-    + *scratch.folder*,	a character string indicating the path of the scratch folder
+- scratch.folder,	a character string indicating the path of the scratch folder
 
-    + *file*,	a character string indicating the path of the file, with file name and extension included
+- file,	a character string indicating the path of the file, with file name and extension included
 
-    + *separator*,	separator used in count file, e.g. '\t', ','
+- separator,	separator used in count file, e.g. '\t', ','
 
-    + *nCluster*,	number of cluster in which the dataset is divided
+- nCluster,	number of cluster in which the dataset is divided
 
-    + *bias*,	bias method to use : "mirna" , "TF", "CUSTOM", kinasi,immunoSignature
+- bias,	bias method used : "mirna" , "TF", "CUSTOM", kinasi, immunoSignature, ALL.
 
-    + *permutation*,	number of permutations to perform the pValue to evaluate clustering
+- permutation,	number of permutations to evaluate clustering quality
 
-    + *nEpochs*,	number of Epochs for neural network training
+- nEpochs,	number of Epochs for neural network training
 
-    + *patiencePercentage*,	number of Epochs percentage of not training before to stop.
+- patiencePercentage,	number of Epochs percentage of not training before to stop.
 
-    + *cl*,	Clustering.output file. Can be the output of every clustering algorithm from rCASC or can be customized with first column cells names, second column cluster they belong.All path needs to be provided.
+- cl,	Clustering.output file. Can be the output of every clustering algorithm from rCASC or can be customized with first column cells names, second column cluster they belong. Full path needs to be provided.
 
-    + *seed*,	important value to reproduce the same results with same input
+- seed,	important value to reproduce the same results with same input
 
-    + *projectName*,	might be different from the matrixname in order to perform different analysis on the same dataset
+- projectName,	it must be different from the matrixname in order to perform different analysis on the same dataset
 
-    + *bN*,	name of the custom bias file. This file need header, in the first column has to be the source and in the second column the gene symbol.All path needs to be provided,
+- bN,	name of the custom bias file. This file need header, in the first column has to be the source and in the second column the gene symbol. Full path needs to be provided,
 
-    + *lr*,	learning rate, the speed of learning. Higher value may increase the speed of convergence but may also be not very precise
+- lr,	learning rate, the speed of learning. Higher value may increase the speed of convergence but may also be not very precise
 
-    + *beta_1*,	look at keras optimizer parameters
+- beta_1,	look at keras optimizer parameters
 
-    + *beta_2*,	look at keras optimizer parameters
+- beta_2,	look at keras optimizer parameters
 
-    + *epsilon*,	look at keras optimizer parameters
+- epsilon,	look at keras optimizer parameters
 
-    + *decay*,	look at keras optimizer parameters
+- decay,	look at keras optimizer parameters
 
-    + *loss*,	loss of function to use, for other loss of function check the keras loss of functions.
+- loss,	the loss of function in use, for other loss of function check the keras loss of functions.
 
-    + *clusterMethod*,	clustering methods: "GRIPH","SIMLR","SEURAT","SHARP"
+- clusterMethod,	clustering methods in use, possible values: "GRIPH","SIMLR","SEURAT","SHARP"
 
-    + *pcaDimensions*,	number of dimensions to use for Seurat Pca reduction.
+- pcaDimensions,	number of dimensions to use for Seurat Pca reduction.
 
-    + *permAtTime*,	number of permutation in parallel
+- permAtTime,	number of permutations to be run in parallel. Usually one permutation per core. (IMPORTANT NOTE) Too many parallel permutatiosn might use all available memory.
 
-    + *largeScale*,	boolean for SIMLR analysis, TRUE if rows are less then columns or if the computational time are huge
+- largeScale,	boolean for SIMLR analysis, TRUE if rows are less then columns or if the computational time are huge
 
-    + *Sp*,	minimun number of percentage of cells that has to be in common between two permutation to be the same cluster.
+- Sp,	minimun number of percentage of cells that has to be in common between two permutation to be the same cluster.
 
-    + *threads*,	integer refering to the max number of process run in parallel default 1 max the number of clusters under analysis, i.e. nCluster
+- threads,	integer refering to the max number of process run in parallel default 1 max the number of clusters under analysis, i.e. nCluster
 
-    + *X*,	from 0 to 1 argument for XL-mHG default 0.15, for more info see cometsc help.
+- X,	from 0 to 1 argument for XL-mHG default 0.15, for more info see cometsc help.
 
-    + *K*,	the number of gene combinations to be considered., possible values 2, 3, 4, default 2. WARNING increasing the number of combinations makes the matrices very big
+- K,	the number of gene combinations to be considered., possible values 2, 3, 4, default 2. WARNING increasing the number of combinations makes the matrices very big
 
-    + *counts*,	if set to True it will graph the log(expression+1). To be used if unlogged data are provided
+- counts,	if set to True it will does the log(expression+1) of the count matrix. To be used if unlogged data are provided
 
-    + *skipvis*,	set to True to skip visualizations
+- skipvis,	it is set to True to skip visualizations
 
 
 
