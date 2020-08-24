@@ -37,7 +37,7 @@ The SCA workflow is shown in the figure below, which describes the basic steps r
 
 ```{r fig.02, fig.cap="**Figure SCA workflow**", , echo=FALSE, eval=TRUE, out.width="80%", fig.align="center"}
 library(knitr)
-include_graphics('./img/sca_workflow.png')
+include_graphics('./img/scaworkflow.png')
 ```
 
 
