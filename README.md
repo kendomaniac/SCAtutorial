@@ -46,7 +46,7 @@ This step checks that dockert daemon is running and downloads the dockert contai
 
 ## Web site
 
-The vignette of the SCAtutorial is available at [**vignette**](https://kendomaniac.github.io/SCAtutorial/)
+The vignette of the SCAtutorial is available at [**vignette**](https://kendomaniac.github.io/SCAtutorial/articles/SCAvignette.html)
 
 
 
