@@ -35,7 +35,7 @@ include_graphics('./img/rCASC.png')
 The SCA workflow is shown in the figure below, which describes the basic steps required to extract hidden functional features, i.e.  TFs, miRNAs, Kinases, from a scRNAseq experiment using Sparsely-Connected-Autoencoder. To execute a SCA analysis it is required a scRNAseq count matrix. Subpopulation organization is then discovered using any of the clustering tools implemented in rCASC a), and the quality of the subpopulation organization is evaluated using **C**ell **S**tability **S**core metric b), for more info on CSS please see [[*Alessandri et al 2019 supplementary data*](https://academic.oup.com/gigascience/article/8/9/giz105/5565135#supplementary-data). The clusters'data matrix, which is the count matrix including subpopulation organization, is normalized c). Normalized data are used to train a Sparsely-Connected-Autoencoder d). The hidden layer matrix is saved over multiple runs of the Sparsely-Connected-Autoencoder (hidden layer matrix is made of 0/1 for each hidden node, where 1 indicates that the node was used and 0 that the node was not used). The ability of each hidden layer matrix to reconstruct, at least partially, the expected subpopulation organization is evaluated by clustering e) and the quality of the reconstruction is evaluated using two metrics: **Q**uality **C**ontrol of **C**lusters and **Q**uality **C**ontrol of **M**odels f), more information on these two metrics will be given later in this vignette. The hidden layer frequency matrix provides information of the usage of the hidden nodes (TFs, miRNAs, Kinases) over multiple runs of the Sparsely-Connected-Autoencoder. COMET tool [[*Delaney et al. 2019*](https://pubmed.ncbi.nlm.nih.gov/31657111/)] is then used to grab the most important molecular features, i.e.  TFs, miRNAs, Kinases, associated to each SCA reconstructed cluster.
 
 
-```{r fig.02, fig.cap="**Figure SCA workflow**", , echo=FALSE, eval=TRUE, out.width="80%", fig.align="center"}
+```{r fig.02, fig.cap="**Figure SCA workflow**", echo=FALSE, eval=TRUE, out.width="80%", fig.align="center"}
 library(knitr)
 include_graphics('./img/scaworkflow.png')
 ```
@@ -68,9 +68,9 @@ include_graphics('./img/5clusters.png')
 
 # **Section 3**: Manually curated cancer-immune-signature 
 
-A SCA based on manually curated cancer immunosignature detects features specific for clusters 4 and 5 of the setA, see Figure below.
+SCA analysis based on a manually curated cancer-immune-signature (IS, Figure below) was also used on setA reference clusters, see main manuscript. This SCA analysis shows, for cluster 4 (Natural Killer cells) and cluster 5 (Naïve T-cells), QCM/QCC values greater than 0.5 for the majority of the cells (Figure below).
 
-```{r fig.04, fig.cap="**Figure SCA analysis using a manually curated cancer-immune-signature (IS)**. Input counts table for SCA is log10 transformed and 160 permutations were run. Latent space clustering was done with SIMLR.", echo=FALSE, eval=TRUE, out.width="40%", fig.align="center"}
+```{r fig.04, fig.cap="**Figure SCA analysis using a manually curated cancer-immune-signature (IS)**. Input counts table for SCA is setA, log10 transformed. 160 permutations were run and latent space clustering was done with SIMLR.", echo=FALSE, eval=TRUE, out.width="40%", fig.align="center"}
 library(knitr)
 include_graphics('./img/is.png')
 ```
@@ -78,7 +78,7 @@ include_graphics('./img/is.png')
 
 # **Section 4**: variational SCA (vSCA)
 
-Looking at the results at the level of QCC and QCM, vSCA do not provide any advantage with respect to a normal SCA, see Figure below.
+VAEs have one fundamentally unique property that separates them from other autoencoders: their latent spaces are, by design, continuous, allowing easy random sampling and interpolation. We tested vSCA based on TF-targets using setA. Looking at the results at the level of QCC and QCM, vSCA does not provide any advantage with respect to a normal SCA, see Figure below.
 
 ```{r fig.05, fig.cap="**Figure vSCA based on TFs targets**. A) QCC TFs based SCA, B) QCM TFs based SCA, C) QCC TFs based vSCA, D) QCM TFs based vSCA . Input counts table for SCA is log10 transformed, analysis was performed using 160 permutations and latent space clustering was done with SIMLR.", echo=FALSE, eval=TRUE, out.width="100%", fig.align="center"}
 library(knitr)
@@ -344,14 +344,25 @@ The function **wrapperAutoencoder** executes all the steps required for the auto
 ```{r, echo=T, eval=F}
 start_time <- Sys.time()
 
-home <- getwd()
-cat("\n",home,"\n")
 library(rCASC)
-wrapperAutoencoder(group="docker", scratch.folder=paste(home, "scratch", sep="/"),  
+home <- getwd()
+dir.create(paste(home, "setA", sep="/"))
+dir.create(paste(home, "scratch", sep="/"))
+file.copy(from=paste(path.package("rCASC"),"examples/setA.csv.zip", sep="/"), to=paste(home, "setA", sep="/"), overwrite = T)
+unzip(paste(home, "setA/setA.csv.zip", sep="/"), exdir=paste(home, "setA", sep="/"))
+file.remove(paste(home, "setA/setA.csv.zip", sep="/"))
+system(paste("rm -fR ", home,"/setA/__MACOSX", sep=""))  
+
+griphBootstrap(group="docker",scratch.folder=paste(home, "scratch", sep="/"), file=paste(home, "setA/setA.csv", sep="/"),  nPerm=8, permAtTime=8, percent=10, separator=",",logTen=0, seed=111)
+
+end_time <- Sys.time()
+cat("\n Computing time: ",end_time - start_time, " mins\n")
+
+wrapperAutoencoder(group="docker", scratch.folder=paste(home, "scratch", sep="/"),
                    file=paste(home, "setA/setA.csv", sep="/"), separator=",",
                    nCluster=5, bias="TF", permutation=8, nEpochs=300, 
                    cl=paste(home,"setA/Results/setA/5/setA_clustering.output.csv",sep=""),
-                   projectName="setATF",clusterMethod="GRIPH")
+                   projectName="setATF",clusterMethod="GRIPH", Sp=0.8)
 ```
 
 ### **Section 5.6.1**: wrapperAutoencoder parameters:

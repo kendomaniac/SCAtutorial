@@ -16,7 +16,7 @@ freqMatrix_clustering.output.csv converted in vis.txt
 Error in read.table("vis.txt", header = TRUE, row.names = 1, stringsAsFactors = F) : 
   no lines available in input
 Execution halted
-Started on 2020-08-24T17:40:43.037971
+Started on 2020-08-25T09:06:01.783415
 Set X to 0.15.
 Reading data...
 Traceback (most recent call last):

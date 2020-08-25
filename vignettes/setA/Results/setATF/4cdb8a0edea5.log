@@ -17,6 +17,7 @@ The following objects are masked from 'package:base':
 [1] 6
 [1] 7
 [1] 8
+Error in cut.default(x, breaks = breaks) : 'breaks' are not unique
 null device 
           1 
 [1] 1
