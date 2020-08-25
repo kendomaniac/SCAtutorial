@@ -1,8 +1,8 @@
 Package: SCAtutorial
 Type: Package
 Title: Supporting material for the manuscript Sparsely-Connected Autoencoder (SCA) for single cell RNAseq data mining
-Version: 1.0
-Date: 2020-08-20
+Version: 1.1
+Date: 2020-08-25
 Author: Raffaele A Calogero
 Maintainer: Raffaele A Calogero <raffaele.calogero@unito.it>
 Description: Supporting material for the manuscript Sparsely-Connected Autoencoder (SCA) for single cell RNAseq data mining
