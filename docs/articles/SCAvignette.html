@@ -31,7 +31,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">SCAtutorial</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.1</span>
       </span>
     </div>
 
@@ -184,8 +184,8 @@ p.caption {
 ## creating a folder in scratch folder
 ## 
 ## Docker ID is:
-##  904cb9dc7813 
-## ...............
+##  922444fa6fd7 
+## ................
 ## 
 ## 
 ## Docker exit status: 0 
@@ -198,7 +198,7 @@ p.caption {
 ## creating a folder in scratch folder
 ## 
 ## Docker ID is:
-##  a47e095779ba 
+##  a2238aa22e9a 
 ## ...
 ## 
 ## 
@@ -209,7 +209,7 @@ p.caption {
 <div class="sourceCode" id="cb10"><html><body><pre class="r"><span class="no">end_time</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/Sys.time.html">Sys.time</a></span>()
 <span class="fu"><a href="https://rdrr.io/r/base/cat.html">cat</a></span>(<span class="st">"\n Computing time: "</span>,<span class="no">end_time</span> - <span class="no">start_time</span>, <span class="st">" mins\n"</span>)</pre></body></html></div>
 <pre><code>## 
-##  Computing time:  2.720995  mins</code></pre>
+##  Computing time:  2.909978  mins</code></pre>
 <p>The autoencoder function feeds the SCA using the data derived by the script shown above. The chunk below show a single permutation run, which is used to estimate the nEpochs max value. <strong>Figure learning rate</strong> shows an example of the learning curve. In this example the maximum level of learning is obtained with 250 epochs. Thus, the analysis with multiple permutations can be done setting epoch slightly greater than 250, e.g. 300. Learning pictures are saved in <strong>SCAtutorial/vignettes/setA/Results/setATF/5/</strong></p>
 <div class="sourceCode" id="cb12"><html><body><pre class="r"><span class="no">start_time</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/Sys.time.html">Sys.time</a></span>()
 
@@ -230,8 +230,8 @@ p.caption {
 ## [1] "setA_clustering.output.csv"
 ## 
 ## Docker ID is:
-##  bce161eca2d7 
-## ..........
+##  58653b2b66a7 
+## .........
 ## 
 ## 
 ## Docker exit status: 0 
@@ -241,7 +241,7 @@ p.caption {
 <div class="sourceCode" id="cb14"><html><body><pre class="r"><span class="no">end_time</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/Sys.time.html">Sys.time</a></span>()
 <span class="fu"><a href="https://rdrr.io/r/base/cat.html">cat</a></span>(<span class="st">"\n Computing time: "</span>,<span class="no">end_time</span> - <span class="no">start_time</span>, <span class="st">" mins\n"</span>)</pre></body></html></div>
 <pre><code>## 
-##  Computing time:  1.528027  mins</code></pre>
+##  Computing time:  1.364335  mins</code></pre>
 <div class="figure" style="text-align: center">
 <img src="img/learning.png" alt="**Figure learning rate**." width="60%"><p class="caption">
 <strong>Figure learning rate</strong>.
@@ -285,8 +285,8 @@ p.caption {
 ## [1] "setA_clustering.output.csv"
 ## 
 ## Docker ID is:
-##  5fac727346df 
-## ................
+##  f71dff9f9ea3 
+## ..............
 ## 
 ## 
 ## Docker exit status: 0 
@@ -296,7 +296,7 @@ p.caption {
 <div class="sourceCode" id="cb18"><html><body><pre class="r"><span class="no">end_time</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/Sys.time.html">Sys.time</a></span>()
 <span class="fu"><a href="https://rdrr.io/r/base/cat.html">cat</a></span>(<span class="st">"\n Computing time: "</span>,<span class="no">end_time</span> - <span class="no">start_time</span>, <span class="st">" mins\n"</span>)</pre></body></html></div>
 <pre><code>## 
-##  Computing time:  2.53684  mins</code></pre>
+##  Computing time:  2.205505  mins</code></pre>
 <p>The <strong>autoencoder</strong> function produces as output many files with the extension <strong>Ndensespace.format</strong>, in the folder <strong>Results/ProjectName/Permutation</strong>. The number of such files corresponds to the number of selected permutations. In this specific examples autoencoder outputs are in <strong>/SCAtutorial/vignettes/setA/Results/setATF/5/permutation/</strong> folder.</p>
 </div>
 </div>
@@ -319,8 +319,8 @@ p.caption {
 ## creating a folder in scratch folder
 ## 
 ## Docker ID is:
-##  00ce9133324a 
-## .........
+##  bf11bbea4533 
+## ........
 ## 
 ## 
 ## Docker exit status: 0 
@@ -330,7 +330,7 @@ p.caption {
 <div class="sourceCode" id="cb22"><html><body><pre class="r"><span class="no">end_time</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/Sys.time.html">Sys.time</a></span>()
 <span class="fu"><a href="https://rdrr.io/r/base/cat.html">cat</a></span>(<span class="st">"\n Computing time: "</span>,<span class="no">end_time</span> - <span class="no">start_time</span>, <span class="st">"\n"</span>)</pre></body></html></div>
 <pre><code>## 
-##  Computing time:  1.367215</code></pre>
+##  Computing time:  1.201699</code></pre>
 <div id="section-5-2-1-autoencoderclustering-parameters-for-the-full-list-of-parameters-please-refer-to-the-function-help" class="section level3">
 <h3 class="hasAnchor">
 <a href="#section-5-2-1-autoencoderclustering-parameters-for-the-full-list-of-parameters-please-refer-to-the-function-help" class="anchor"></a><strong>Section 5.2.1</strong>: autoencoderClustering parameters (for the full list of parameters please refer to the function help):</h3>
@@ -355,7 +355,7 @@ p.caption {
 ##  /Users/raffaelecalogero/Dropbox/data/partially-connected-autoencoders/paper/npj_Systems_Biology_and_Applications/rebuttal/SCAtutorial/vignettes</code></pre>
 <div class="sourceCode" id="cb26"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">rCASC</span>)
 <span class="fu"><a href="https://rdrr.io/pkg/rCASC/man/autoencoderAnalysis.html">autoencoderAnalysis</a></span>(<span class="kw">group</span><span class="kw">=</span><span class="st">"docker"</span>, <span class="kw">scratch.folder</span><span class="kw">=</span><span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste</a></span>(<span class="no">home</span>, <span class="st">"scratch"</span>, <span class="kw">sep</span><span class="kw">=</span><span class="st">"/"</span>),
-                    <span class="kw">file</span><span class="kw">=</span><span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste</a></span>(<span class="no">home</span>, <span class="st">"setA/Results/setATF/setA.csv"</span>, <span class="kw">sep</span><span class="kw">=</span><span class="st">"/"</span>),
+                    <span class="kw">file</span><span class="kw">=</span><span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste</a></span>(<span class="no">home</span>, <span class="st">"setA/Results/setATF_GRIPH/setA.csv"</span>, <span class="kw">sep</span><span class="kw">=</span><span class="st">"/"</span>),
                     <span class="kw">separator</span><span class="kw">=</span><span class="st">","</span>, <span class="kw">nCluster</span><span class="kw">=</span><span class="fl">5</span>, <span class="kw">seed</span><span class="kw">=</span><span class="fl">1111</span>,
                     <span class="kw">projectName</span><span class="kw">=</span><span class="st">"setATF_GRIPH"</span>, <span class="kw">Sp</span><span class="kw">=</span><span class="fl">0.8</span>)</pre></body></html></div>
 <pre><code>## 
@@ -364,7 +364,7 @@ p.caption {
 ## creating a folder in scratch folder
 ## 
 ## Docker ID is:
-##  4cdb8a0edea5 
+##  32a26acafebe 
 ## ..
 ## 
 ## 
@@ -375,7 +375,7 @@ p.caption {
 <div class="sourceCode" id="cb28"><html><body><pre class="r"><span class="no">end_time</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/Sys.time.html">Sys.time</a></span>()
 <span class="fu"><a href="https://rdrr.io/r/base/cat.html">cat</a></span>(<span class="st">"\n Computing time: "</span>,<span class="no">end_time</span> - <span class="no">start_time</span>, <span class="st">"\n"</span>)</pre></body></html></div>
 <pre><code>## 
-##  Computing time:  11.90944</code></pre>
+##  Computing time:  11.8868</code></pre>
 <p>In the figure below, only cluster 7 can be well explained by latent space, Figure below panel B. QCM metric is also an extension of CSS and it measures the ability of the neural network to generate consistent data over the different training. In the Figure below panel C, SCA provides consistent data only for clusters 5 and 7. Informative clusters are those characterized by high QCM and QCC scores. In Figure below panel D, only cluster 7 is characterized by a robust neural network able to keep the cell aggregated using hidden layer knowledge. Dashed red line (Figure below panel D) indicates the defined threshold to consider the latent space information suitable to support cells’ clusters.</p>
 <div class="figure" style="text-align: center">
 <img src="img/qcm-qcf.png" alt="**Figure QCC and QCM**. Summary generated using output of autoencoderAnalysis for the Breast cancer data set in Fig. 5 main manuscript. A) Nine clusters were detected analysing breast cancer dataset with SIMLR. B) QCC violin plot. C) QCM violin plot, D) Combined view of QCM and QCC" width="100%"><p class="caption">
@@ -386,8 +386,8 @@ p.caption {
 <h3 class="hasAnchor">
 <a href="#section-5-3-1-autoencoderanalysis-parameters-for-the-full-list-of-parameters-please-refer-to-the-function-help" class="anchor"></a><strong>Section 5.3.1</strong>: autoencoderAnalysis parameters (for the full list of parameters please refer to the function help):</h3>
 <ul>
-<li><p>file, (IMPORTANT NOTE) this parameter refers to the full path of the count table copied in the results output folder of the autoencoder function. See as example the above chunk of code (same as for autoencoderClustering function)</p></li>
-<li><p>projectName, this parameter is the same indicated in autoencoder function.</p></li>
+<li><p>file, (IMPORTANT NOTE) this parameter refers to the full path of the count table copied in the results output folder of the autoencoderClustering function. See as example the above chunk of code (same as for autoencoderClustering function)</p></li>
+<li><p>projectName, this parameter is the same indicated in autoencoderClustering function.</p></li>
 <li><p>sp, this parameter indicates the similarity threshold defined for CSS, default 0.8. Reduction below 0.7 of this threshold reduces the specificity of CSS; values equal or smaller than 0.5 are meaningless.</p></li>
 </ul>
 <p>The outputs of <strong>autoencoderAnalysis</strong> are the pdfs:</p>
@@ -411,7 +411,7 @@ p.caption {
 ##  /Users/raffaelecalogero/Dropbox/data/partially-connected-autoencoders/paper/npj_Systems_Biology_and_Applications/rebuttal/SCAtutorial/vignettes</code></pre>
 <div class="sourceCode" id="cb32"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">rCASC</span>)
 <span class="fu"><a href="https://rdrr.io/pkg/rCASC/man/autoFeature.html">autoFeature</a></span>(<span class="kw">group</span><span class="kw">=</span><span class="st">"docker"</span>, <span class="kw">scratch.folder</span><span class="kw">=</span><span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste</a></span>(<span class="no">home</span>, <span class="st">"scratch"</span>, <span class="kw">sep</span><span class="kw">=</span><span class="st">"/"</span>),
-            <span class="kw">file</span><span class="kw">=</span><span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste</a></span>(<span class="no">home</span>, <span class="st">"setA/Results/setATF/setA.csv"</span>, <span class="kw">sep</span><span class="kw">=</span><span class="st">"/"</span>),
+            <span class="kw">file</span><span class="kw">=</span><span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste</a></span>(<span class="no">home</span>, <span class="st">"setA/Results/setATF_GRIPH/setA.csv"</span>, <span class="kw">sep</span><span class="kw">=</span><span class="st">"/"</span>),
             <span class="kw">separator</span><span class="kw">=</span><span class="st">","</span>, <span class="kw">nCluster</span><span class="kw">=</span><span class="fl">5</span>, <span class="kw">projectName</span><span class="kw">=</span><span class="st">"setATF_GRIPH"</span>)</pre></body></html></div>
 <pre><code>## 
 ##  In your system the following version of Docker is installed:
@@ -419,7 +419,7 @@ p.caption {
 ## creating a folder in scratch folder
 ## 
 ## Docker ID is:
-##  627282230c17 
+##  e202dc27581c 
 ## ..
 ## 
 ## 
@@ -430,12 +430,12 @@ p.caption {
 <div class="sourceCode" id="cb34"><html><body><pre class="r"><span class="no">end_time</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/Sys.time.html">Sys.time</a></span>()
 <span class="fu"><a href="https://rdrr.io/r/base/cat.html">cat</a></span>(<span class="st">"\n Computing time: "</span>,<span class="no">end_time</span> - <span class="no">start_time</span>, <span class="st">"\n"</span>)</pre></body></html></div>
 <pre><code>## 
-##  Computing time:  11.45889</code></pre>
+##  Computing time:  11.57784</code></pre>
 <div id="section-5-4-1-autofeature-parameters-for-the-full-list-of-parameters-please-refer-to-the-function-help" class="section level3">
 <h3 class="hasAnchor">
 <a href="#section-5-4-1-autofeature-parameters-for-the-full-list-of-parameters-please-refer-to-the-function-help" class="anchor"></a><strong>Section 5.4.1</strong>: autoFeature parameters (for the full list of parameters please refer to the function help):</h3>
 <ul>
-<li><p>file, (IMORTANT NOTE) This parameter refers to the full path of the count table copied in the results output folder of the autoencoder function. See as example the above chunk of code (same as for autoencoderClustering function)</p></li>
+<li><p>file, (IMORTANT NOTE) This parameter refers to the full path of the count table copied in the results output folder of the autoencoderClustering function. See as example the above chunk of code (same as for autoencoderClustering function)</p></li>
 <li><p>projectName, this parameter refers to the outputs of autoencoderAnalysis</p></li>
 </ul>
 </div>
@@ -454,15 +454,15 @@ p.caption {
 <span class="fu"><a href="https://rdrr.io/pkg/rCASC/man/cometsc2.html">cometsc2</a></span>(<span class="kw">group</span><span class="kw">=</span><span class="st">"docker"</span>, <span class="kw">file</span><span class="kw">=</span><span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste</a></span>(<span class="no">home</span>, <span class="st">"setA/Results/setATF_GRIPH/5/freqMatrix.csv"</span>, <span class="kw">sep</span><span class="kw">=</span><span class="st">"/"</span>),
          <span class="kw">scratch.folder</span><span class="kw">=</span><span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste</a></span>(<span class="no">home</span>, <span class="st">"scratch"</span>, <span class="kw">sep</span><span class="kw">=</span><span class="st">"/"</span>), <span class="kw">threads</span><span class="kw">=</span><span class="fl">2</span>, <span class="kw">X</span><span class="kw">=</span><span class="fl">0.15</span>, <span class="kw">K</span><span class="kw">=</span><span class="fl">2</span>, <span class="kw">counts</span><span class="kw">=</span><span class="st">"False"</span>,
          <span class="kw">skipvis</span><span class="kw">=</span><span class="st">"False"</span>, <span class="kw">nCluster</span><span class="kw">=</span><span class="fl">5</span>, <span class="kw">separator</span><span class="kw">=</span><span class="st">","</span>,
-         <span class="kw">clustering.output</span><span class="kw">=</span><span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste</a></span>(<span class="no">home</span>,<span class="st">"setA/Results/setA/5/setA_clustering.output.csv"</span>,<span class="kw">sep</span><span class="kw">=</span><span class="st">""</span>))</pre></body></html></div>
+         <span class="kw">clustering.output</span><span class="kw">=</span><span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste</a></span>(<span class="no">home</span>,<span class="st">"setA/Results/setA/5/setA_clustering.output.csv"</span>,<span class="kw">sep</span><span class="kw">=</span><span class="st">"/"</span>))</pre></body></html></div>
 <pre><code>## 
 ##  In your system the following version of Docker is installed:
 ## Docker version 19.03.12, build 48a66213fe
 ## creating a folder in scratch folder
 ## 
 ## Docker ID is:
-##  9994ab7b2f22 
-## ..
+##  554e70ddd950 
+## .................................................................
 ## 
 ## 
 ## Docker exit status: 0 
@@ -472,7 +472,7 @@ p.caption {
 <div class="sourceCode" id="cb40"><html><body><pre class="r"><span class="no">end_time</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/Sys.time.html">Sys.time</a></span>()
 <span class="fu"><a href="https://rdrr.io/r/base/cat.html">cat</a></span>(<span class="st">"\n Computing time: "</span>,<span class="no">end_time</span> - <span class="no">start_time</span>, <span class="st">"\n"</span>)</pre></body></html></div>
 <pre><code>## 
-##  Computing time:  11.01853</code></pre>
+##  Computing time:  10.7734</code></pre>
 <p><strong>cometsc2</strong> outputs are the same of COMET, for more information please refer to <a href="https://hgmd.readthedocs.io/en/latest/"><em>COMET documentation</em></a>.</p>
 <p><strong>IMPORTANT</strong>: This function produces an output including all clusters, but <strong>only results related to clusters supported by QCM and QCC means greater than 0.5 have to be taken in account</strong>.</p>
 <div id="section-5-5-1-autofeature-parameters-for-the-full-list-of-parameters-please-refer-to-the-function-help" class="section level3">
@@ -492,7 +492,7 @@ p.caption {
 <div id="section-5-6-wrapperautoencoder-function" class="section level2">
 <h2 class="hasAnchor">
 <a href="#section-5-6-wrapperautoencoder-function" class="anchor"></a><strong>Section 5.6</strong>: wrapperAutoencoder function</h2>
-<p>The function <strong>wrapperAutoencoder</strong> executes all the steps required for the autoencoder analysis. It should be used when it is clear the overall set of steps to be performed and the parameters to be used.</p>
+<p>Since the interconnection between the various functions shown above is quite complex, we assembled the <strong>wrapperAutoencoder</strong> function, which executes allautoencoder analysis steps.</p>
 <div class="sourceCode" id="cb42"><html><body><pre class="r"><span class="no">start_time</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/Sys.time.html">Sys.time</a></span>()
 
 <span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">rCASC</span>)
@@ -511,9 +511,9 @@ p.caption {
 
 <span class="fu"><a href="https://rdrr.io/pkg/rCASC/man/wrapperAutoencoder.html">wrapperAutoencoder</a></span>(<span class="kw">group</span><span class="kw">=</span><span class="st">"docker"</span>, <span class="kw">scratch.folder</span><span class="kw">=</span><span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste</a></span>(<span class="no">home</span>, <span class="st">"scratch"</span>, <span class="kw">sep</span><span class="kw">=</span><span class="st">"/"</span>),
                    <span class="kw">file</span><span class="kw">=</span><span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste</a></span>(<span class="no">home</span>, <span class="st">"setA/setA.csv"</span>, <span class="kw">sep</span><span class="kw">=</span><span class="st">"/"</span>), <span class="kw">separator</span><span class="kw">=</span><span class="st">","</span>,
-                   <span class="kw">nCluster</span><span class="kw">=</span><span class="fl">5</span>, <span class="kw">bias</span><span class="kw">=</span><span class="st">"TF"</span>, <span class="kw">permutation</span><span class="kw">=</span><span class="fl">8</span>, <span class="kw">nEpochs</span><span class="kw">=</span><span class="fl">300</span>,
-                   <span class="kw">cl</span><span class="kw">=</span><span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste</a></span>(<span class="no">home</span>,<span class="st">"setA/Results/setA/5/setA_clustering.output.csv"</span>,<span class="kw">sep</span><span class="kw">=</span><span class="st">""</span>),
-                   <span class="kw">projectName</span><span class="kw">=</span><span class="st">"setATF"</span>,<span class="kw">clusterMethod</span><span class="kw">=</span><span class="st">"GRIPH"</span>, <span class="kw">Sp</span><span class="kw">=</span><span class="fl">0.8</span>)</pre></body></html></div>
+                   <span class="kw">cl</span><span class="kw">=</span><span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste</a></span>(<span class="no">home</span>,<span class="st">"/setA/Results/setA/5/setA_clustering.output.csv"</span>,<span class="kw">sep</span><span class="kw">=</span><span class="st">""</span>),
+                   <span class="kw">projectName</span><span class="kw">=</span><span class="st">"setATF2"</span>,<span class="kw">clusterMethod</span><span class="kw">=</span><span class="st">"GRIPH"</span>, <span class="kw">Sp</span><span class="kw">=</span><span class="fl">0.8</span>, <span class="kw">nCluster</span><span class="kw">=</span><span class="fl">5</span>,
+                   <span class="kw">permutation</span><span class="kw">=</span><span class="fl">3</span>, <span class="kw">nEpochs</span><span class="kw">=</span><span class="fl">10</span>, <span class="kw">bias</span><span class="kw">=</span><span class="st">"TF"</span>, <span class="kw">skipvis</span><span class="kw">=</span><span class="st">"False"</span>)</pre></body></html></div>
 <div id="section-5-6-1-wrapperautoencoder-parameters" class="section level3">
 <h3 class="hasAnchor">
 <a href="#section-5-6-1-wrapperautoencoder-parameters" class="anchor"></a><strong>Section 5.6.1</strong>: wrapperAutoencoder parameters:</h3>

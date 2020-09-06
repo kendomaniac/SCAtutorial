@@ -48,5 +48,11 @@ This step checks that dockert daemon is running and downloads the dockert contai
 
 The vignette of the SCAtutorial is available at [**vignette**](https://kendomaniac.github.io/SCAtutorial/articles/SCAvignette.html)
 
+The vignette is located in the folder *SCAtutorial/docs/articles*. The data produced by the building of the vignette using the command:
 
+```
+pkgdown::build_site()
+
+```
+ are instead located in *SCAtutorial/vignettes/setA* folder.
 

@@ -1,0 +1,467 @@
+Loading required package: methods
+
+Attaching package: 'dplyr'
+
+The following objects are masked from 'package:stats':
+
+    filter, lag
+
+The following objects are masked from 'package:base':
+
+    intersect, setdiff, setequal, union
+
+Loading required package: sm
+Package 'sm', version 2.2-5.4: type help(sm) for summary information
+Loading required package: prodlim
+Warning message:
+In dir.create(paste("./../scratch/", matrixName, sep = "")) :
+  './../scratch/setA' already exists
+
+WARNING: range1 with  griph  is suppose to be null
+
+WARNING:range2 with  griph  is suppose to be null
+cp: cannot stat '/scratch/setA.csv': No such file or directory
+Preprocessing...
+Removed 0 uninformative (invariant/no-show) gene(s)...
+
+Filtering Genes...Retained the top 50.9% overdispersed gene(s) 
+done
+Calculating Pairwise and Diffused Similarities...done
+Estimating Graph Structure...done
+Calculating edge weights and knn-based pruning...Kmnn:60
+done
+Pruning based on global node similarity: 1 / 1	keeping 73.8% of edges
+Detecting Graph Communities...
+done
+
+
+Refining Cluster Structure...
+MISCL
+0
+
+
+7 substantial clusters found...
+
+Bootstrapping to refine clusters...
+Calculating Cell Distances to Cluster Centroids (Bulks)...
+P (Elapsed Time: 0.062)
+C (Elapsed Time: 0.183)
+S (Elapsed Time: 0.145)
+H (Elapsed Time: 0.11)
+bEM (Elapsed Time: 0.182)
+done
+Calculating edge weights and knn-based pruning...Kmnn:33
+done
+	keeping 69.9% of edges
+Detecting Graph Communities...
+done
+Computing LargeVis embedding...
+	saving LargeVis plot to Lvis_illSg.pdf
+Finished (Elapsed Time: 13.495)
+Cluster number  5   100  % complete 
+Loading required package: methods
+Loading required package: methods
+Loading required package: methods
+Loading required package: methods
+Loading required package: methods
+Loading required package: methods
+
+Attaching package: 'dplyr'
+
+The following objects are masked from 'package:stats':
+
+    filter, lag
+
+The following objects are masked from 'package:base':
+
+    intersect, setdiff, setequal, union
+
+
+Attaching package: 'dplyr'
+
+The following objects are masked from 'package:stats':
+
+    filter, lag
+
+The following objects are masked from 'package:base':
+
+    intersect, setdiff, setequal, union
+
+
+Attaching package: 'dplyr'
+
+The following objects are masked from 'package:stats':
+
+    filter, lag
+
+The following objects are masked from 'package:base':
+
+    intersect, setdiff, setequal, union
+
+Loading required package: methods
+
+Attaching package: 'dplyr'
+
+The following objects are masked from 'package:stats':
+
+    filter, lag
+
+The following objects are masked from 'package:base':
+
+    intersect, setdiff, setequal, union
+
+Loading required package: methods
+
+Attaching package: 'dplyr'
+
+The following objects are masked from 'package:stats':
+
+    filter, lag
+
+The following objects are masked from 'package:base':
+
+    intersect, setdiff, setequal, union
+
+
+Attaching package: 'dplyr'
+
+The following objects are masked from 'package:stats':
+
+    filter, lag
+
+The following objects are masked from 'package:base':
+
+    intersect, setdiff, setequal, union
+
+
+Attaching package: 'dplyr'
+
+The following objects are masked from 'package:stats':
+
+    filter, lag
+
+The following objects are masked from 'package:base':
+
+    intersect, setdiff, setequal, union
+
+
+Attaching package: 'dplyr'
+
+The following objects are masked from 'package:stats':
+
+    filter, lag
+
+The following objects are masked from 'package:base':
+
+    intersect, setdiff, setequal, union
+
+Preprocessing...Preprocessing...Preprocessing...
+Removed 0 uninformative (invariant/no-show) gene(s)...
+
+Removed 0 uninformative (invariant/no-show) gene(s)...
+
+Removed 0 uninformative (invariant/no-show) gene(s)...
+Preprocessing...
+Filtering Genes...
+Removed 0 uninformative (invariant/no-show) gene(s)...
+Preprocessing...
+Filtering Genes...Retained the top 50.9% overdispersed gene(s) 
+done
+Calculating Pairwise and Diffused Similarities...
+Filtering Genes...
+Removed 0 uninformative (invariant/no-show) gene(s)...
+
+Filtering Genes...Preprocessing...Retained the top 50.9% overdispersed gene(s) 
+done
+Calculating Pairwise and Diffused Similarities...Retained the top 50.9% overdispersed gene(s) 
+done
+Calculating Pairwise and Diffused Similarities...Preprocessing...
+Filtering Genes...Retained the top 50.9% overdispersed gene(s) 
+done
+Calculating Pairwise and Diffused Similarities...
+Removed 0 uninformative (invariant/no-show) gene(s)...
+Preprocessing...
+Removed 0 uninformative (invariant/no-show) gene(s)...
+Retained the top 50.9% overdispersed gene(s) 
+done
+Calculating Pairwise and Diffused Similarities...
+Removed 0 uninformative (invariant/no-show) gene(s)...
+
+Filtering Genes...
+Filtering Genes...
+Filtering Genes...Retained the top 50.9% overdispersed gene(s) 
+done
+Calculating Pairwise and Diffused Similarities...Retained the top 50.9% overdispersed gene(s) 
+done
+Calculating Pairwise and Diffused Similarities...Retained the top 51% overdispersed gene(s) 
+done
+Calculating Pairwise and Diffused Similarities...done
+Estimating Graph Structure...done
+Estimating Graph Structure...done
+Estimating Graph Structure...done
+Estimating Graph Structure...done
+Estimating Graph Structure...done
+Calculating edge weights and knn-based pruning...Kmnn:58
+done
+Pruning based on global node similarity: 1 / 1done
+Calculating edge weights and knn-based pruning...Kmnn:58
+done
+Pruning based on global node similarity: 1 / 1done
+Estimating Graph Structure...done
+Estimating Graph Structure...done
+Calculating edge weights and knn-based pruning...Kmnn:58
+done
+Pruning based on global node similarity: 1 / 1done
+Estimating Graph Structure...done
+Calculating edge weights and knn-based pruning...Kmnn:58
+	keeping 73.8% of edges
+Detecting Graph Communities...
+done
+Pruning based on global node similarity: 1 / 1done
+
+
+Refining Cluster Structure...
+MISCL
+0
+
+
+7 substantial clusters found...
+
+Bootstrapping to refine clusters...
+done
+Calculating edge weights and knn-based pruning...done
+Calculating edge weights and knn-based pruning...Kmnn:58
+Kmnn:58
+done
+Pruning based on global node similarity: 1 / 1done
+Pruning based on global node similarity: 1 / 1	keeping 73.6% of edges
+Detecting Graph Communities...
+done
+done
+Calculating edge weights and knn-based pruning...Kmnn:58
+done
+Pruning based on global node similarity: 1 / 1Calculating Cell Distances to Cluster Centroids (Bulks)...
+
+Refining Cluster Structure...
+MISCL
+0
+
+
+7 substantial clusters found...
+
+Bootstrapping to refine clusters...
+
+P (Elapsed Time: 0.431)
+C (Elapsed Time: 0.603)
+Calculating Cell Distances to Cluster Centroids (Bulks)...S (Elapsed Time: 0.552)
+
+P (Elapsed Time: 0.272)
+H (Elapsed Time: 0.268)
+	keeping 73.4% of edges
+Detecting Graph Communities...
+done
+C (Elapsed Time: 0.434)
+
+
+Refining Cluster Structure...
+MISCL
+0
+
+bEM (Elapsed Time: 0.93)
+
+7 substantial clusters found...
+done
+
+Bootstrapping to refine clusters...
+Calculating edge weights and knn-based pruning...Kmnn:33
+S (Elapsed Time: 0.68)
+done
+	keeping 69.9% of edges
+done
+Calculating edge weights and knn-based pruning...Kmnn:58
+Detecting Graph Communities...
+done
+H (Elapsed Time: 0.272)
+done
+Pruning based on global node similarity: 1 / 1Computing LargeVis embedding...
+bEM (Elapsed Time: 0.83)
+done
+Calculating edge weights and knn-based pruning...Kmnn:33
+done
+	keeping 69.9% of edges
+Detecting Graph Communities...
+done
+Calculating Cell Distances to Cluster Centroids (Bulks)...
+P (Elapsed Time: 0.406)
+Computing LargeVis embedding...
+C (Elapsed Time: 0.573)
+	keeping 73.9% of edges
+Detecting Graph Communities...
+done
+
+
+Refining Cluster Structure...
+MISCL
+0
+
+
+7 substantial clusters found...
+
+Bootstrapping to refine clusters...
+S (Elapsed Time: 1.329)
+	keeping 73.8% of edges
+Detecting Graph Communities...
+done
+H (Elapsed Time: 0.527)
+
+
+Refining Cluster Structure...
+MISCL
+0
+
+
+8 substantial clusters found...
+
+Bootstrapping to refine clusters...
+	keeping 74.1% of edges
+bEM (Elapsed Time: 1.243)
+done
+Calculating edge weights and knn-based pruning...Kmnn:33
+Detecting Graph Communities...
+Calculating Cell Distances to Cluster Centroids (Bulks)...done
+done
+	keeping 69.9% of edges
+
+P (Elapsed Time: 0.706)
+Detecting Graph Communities...
+done
+
+
+Refining Cluster Structure...
+MISCL
+0
+
+
+8 substantial clusters found...
+
+Bootstrapping to refine clusters...
+	keeping 73.8% of edges
+C (Elapsed Time: 0.852)
+Detecting Graph Communities...
+Computing LargeVis embedding...
+done
+Calculating Cell Distances to Cluster Centroids (Bulks)...S (Elapsed Time: 0.997)
+
+P (Elapsed Time: 0.376)
+H (Elapsed Time: 0.325)
+
+
+Refining Cluster Structure...
+MISCL
+0
+
+
+8 substantial clusters found...
+
+Bootstrapping to refine clusters...
+C (Elapsed Time: 0.635)
+bEM (Elapsed Time: 1.039)
+done
+Calculating edge weights and knn-based pruning...Kmnn:33
+done
+	keeping 70.1% of edges
+S (Elapsed Time: 0.794)
+	keeping 73.8% of edges
+Detecting Graph Communities...
+done
+Detecting Graph Communities...
+Calculating Cell Distances to Cluster Centroids (Bulks)...done
+Calculating Cell Distances to Cluster Centroids (Bulks)...H (Elapsed Time: 0.603)
+Computing LargeVis embedding...
+
+P (Elapsed Time: 0.338)
+
+P (Elapsed Time: 0.604)
+
+
+Refining Cluster Structure...
+MISCL
+0
+
+
+6 substantial clusters found...
+
+Bootstrapping to refine clusters...
+C (Elapsed Time: 0.563)
+C (Elapsed Time: 0.508)
+S (Elapsed Time: 0.485)
+S (Elapsed Time: 0.54)
+bEM (Elapsed Time: 1.492)
+H (Elapsed Time: 0.334)
+done
+Calculating edge weights and knn-based pruning...Kmnn:37
+H (Elapsed Time: 0.316)
+done
+	keeping 69.2% of edges
+Calculating Cell Distances to Cluster Centroids (Bulks)...Detecting Graph Communities...
+done
+bEM (Elapsed Time: 1.06)
+done
+Calculating edge weights and knn-based pruning...Kmnn:37
+
+P (Elapsed Time: 0.436)
+bEM (Elapsed Time: 1.033)
+done
+Calculating edge weights and knn-based pruning...Kmnn:37
+done
+	keeping 69.2% of edges
+done
+	keeping 69.3% of edges
+Computing LargeVis embedding...
+Detecting Graph Communities...
+done
+Detecting Graph Communities...
+C (Elapsed Time: 0.653)
+done
+S (Elapsed Time: 0.459)
+Computing LargeVis embedding...
+Computing LargeVis embedding...
+H (Elapsed Time: 0.294)
+bEM (Elapsed Time: 1.061)
+done
+Calculating edge weights and knn-based pruning...Kmnn:29
+done
+	keeping 70.9% of edges
+Detecting Graph Communities...
+done
+	saving LargeVis plot to Lvis_AHVGV.pdf
+Finished (Elapsed Time: 86.274)
+Computing LargeVis embedding...
+	saving LargeVis plot to Lvis_OcmxZ.pdf
+Finished (Elapsed Time: 91.273)
+Warning message:
+In dir.create("./memory") : './memory' already exists
+	saving LargeVis plot to Lvis_erM2t.pdf
+Finished (Elapsed Time: 91.645)
+Warning message:
+In dir.create("./memory") : './memory' already exists
+	saving LargeVis plot to Lvis_UwkKP.pdf
+Finished (Elapsed Time: 89.197)
+Warning message:
+In dir.create("./memory") : './memory' already exists
+	saving LargeVis plot to Lvis_dWbaf.pdf
+Finished (Elapsed Time: 95.908)
+Warning message:
+In dir.create("./memory") : './memory' already exists
+	saving LargeVis plot to Lvis_dWbaf.pdf
+Finished (Elapsed Time: 93.934)
+Warning message:
+In dir.create("./memory") : './memory' already exists
+	saving LargeVis plot to Lvis_dWbaf.pdf
+Finished (Elapsed Time: 95.874)
+Warning message:
+In dir.create("./memory") : './memory' already exists
+	saving LargeVis plot to Lvis_MWsRw.pdf
+Finished (Elapsed Time: 93.181)
+Warning message:
+In dir.create("./memory") : './memory' already exists

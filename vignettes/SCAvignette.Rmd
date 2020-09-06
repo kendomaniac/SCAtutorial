@@ -233,7 +233,7 @@ home <- getwd()
 cat("\n",home,"\n")
 library(rCASC)
 autoencoderAnalysis(group="docker", scratch.folder=paste(home, "scratch", sep="/"),
-                    file=paste(home, "setA/Results/setATF/setA.csv", sep="/"), 
+                    file=paste(home, "setA/Results/setATF_GRIPH/setA.csv", sep="/"), 
                     separator=",", nCluster=5, seed=1111, 
                     projectName="setATF_GRIPH", Sp=0.8)
 
@@ -252,9 +252,9 @@ include_graphics('./img/qcm-qcf.png')
 
 ### **Section 5.3.1**: autoencoderAnalysis parameters (for the full list of parameters please refer to the function help):
 
-- file, (IMPORTANT NOTE)  this parameter refers to the full path of the count table copied in the results output folder of the autoencoder function. See as example the above chunk of code (same as for autoencoderClustering function)
+- file, (IMPORTANT NOTE)  this parameter refers to the full path of the count table copied in the results output folder of the autoencoderClustering function. See as example the above chunk of code (same as for autoencoderClustering function)
 
-- projectName, this parameter is the same indicated in autoencoder function. 
+- projectName, this parameter is the same indicated in autoencoderClustering function. 
     
 - sp, this parameter indicates the similarity threshold defined for CSS, default 0.8. Reduction below 0.7 of this threshold reduces the specificity of CSS; values equal or smaller than 0.5 are meaningless.
     
@@ -280,7 +280,7 @@ home <- getwd()
 cat("\n",home,"\n")
 library(rCASC)
 autoFeature(group="docker", scratch.folder=paste(home, "scratch", sep="/"), 
-            file=paste(home, "setA/Results/setATF/setA.csv", sep="/"),
+            file=paste(home, "setA/Results/setATF_GRIPH/setA.csv", sep="/"),
             separator=",", nCluster=5, projectName="setATF_GRIPH")
 
 end_time <- Sys.time()
@@ -290,7 +290,7 @@ cat("\n Computing time: ",end_time - start_time, "\n")
 
 ### **Section 5.4.1**: autoFeature parameters (for the full list of parameters please refer to the function help):
 
-- file, (IMORTANT NOTE) This parameter refers to the full path of the count table copied in the results output folder of the autoencoder function. See as example the above chunk of code (same as for autoencoderClustering function)
+- file, (IMORTANT NOTE) This parameter refers to the full path of the count table copied in the results output folder of the autoencoderClustering function. See as example the above chunk of code (same as for autoencoderClustering function)
 
 - projectName, this parameter refers to the outputs of autoencoderAnalysis 
 
@@ -309,7 +309,7 @@ library(rCASC)
 cometsc2(group="docker", file=paste(home, "setA/Results/setATF_GRIPH/5/freqMatrix.csv", sep="/"),
          scratch.folder=paste(home, "scratch", sep="/"), threads=2, X=0.15, K=2, counts="False", 
          skipvis="False", nCluster=5, separator=",",
-         clustering.output=paste(home,"setA/Results/setA/5/setA_clustering.output.csv",sep=""))
+         clustering.output=paste(home,"setA/Results/setA/5/setA_clustering.output.csv",sep="/"))
 
 end_time <- Sys.time()
 cat("\n Computing time: ",end_time - start_time, "\n")
@@ -339,7 +339,7 @@ cat("\n Computing time: ",end_time - start_time, "\n")
     
 ## **Section 5.6**: wrapperAutoencoder function
 
-The function **wrapperAutoencoder** executes all the steps required for the autoencoder analysis. It should be used when it is clear the overall set of steps to be performed and the parameters to be used.
+Since the interconnection between the various functions shown above is quite complex, we assembled the **wrapperAutoencoder** function, which executes allautoencoder analysis steps. 
 
 ```{r, echo=T, eval=F}
 start_time <- Sys.time()
@@ -359,10 +359,10 @@ end_time <- Sys.time()
 cat("\n Computing time: ",end_time - start_time, " mins\n")
 
 wrapperAutoencoder(group="docker", scratch.folder=paste(home, "scratch", sep="/"),
-                   file=paste(home, "setA/setA.csv", sep="/"), separator=",",
-                   nCluster=5, bias="TF", permutation=8, nEpochs=300, 
-                   cl=paste(home,"setA/Results/setA/5/setA_clustering.output.csv",sep=""),
-                   projectName="setATF",clusterMethod="GRIPH", Sp=0.8)
+                   file=paste(home, "setA/setA.csv", sep="/"), separator=",", 
+                   cl=paste(home,"/setA/Results/setA/5/setA_clustering.output.csv",sep=""),
+                   projectName="setATF2",clusterMethod="GRIPH", Sp=0.8, nCluster=5, 
+                   permutation=3, nEpochs=10, bias="TF", skipvis="False")
 ```
 
 ### **Section 5.6.1**: wrapperAutoencoder parameters:
