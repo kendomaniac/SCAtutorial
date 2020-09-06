@@ -41,18 +41,18 @@ library(SCAtutorial)
 installing.rcasc()
 ```
 
-This step checks that dockert daemon is running and downloads the dockert containers required for the tutorial. It might require sometime, between minutes to hours, depending on the available internet bandwidth.
+This step checks that docker daemon is running and downloads the docker containers required for the tutorial. It might require sometime, between minutes to hours, depending on the available internet bandwidth.
 
 
 ## Web site
 
 The vignette of the SCAtutorial is available at [**vignette**](https://kendomaniac.github.io/SCAtutorial/articles/SCAvignette.html)
 
-The vignette is located in the folder *SCAtutorial/docs/articles*. The data produced by the building of the vignette using the command:
+The vignette is located in the folder *SCAtutorial/docs/articles*. The data produced by the building of the vignette are generated using the command:
 
 ```
 pkgdown::build_site()
 
 ```
- are instead located in *SCAtutorial/vignettes/setA* folder.
+ and they are located in *SCAtutorial/vignettes/setA* folder.
 
